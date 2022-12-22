@@ -1,0 +1,1 @@
+Example use - ./file1.sh | grep ami-id && .file1.sh | grep root
