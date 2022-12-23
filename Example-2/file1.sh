@@ -4,28 +4,19 @@ function1(){
         for i in $(curl -s $url)
         do
                 if [[  `echo $i | grep -v "/"` && $? = 0 ]]
-                then
-                        
+                then                       
                         list1+=($i)
-
                 else
                         for j in $(curl -s $url/$i)
                         do
                                 if [[ `echo $j | grep -v "/"` && $? = 0 ]]
-                                then
-                                        
+                                then                                        
                                         list1+=($i$j)
-                                fi
+                                        fi
                         done
-
-
-
-
-                fi
+                        fi
         done
          }
-
-
 function1
 for item in ${list1[*]}
 do
